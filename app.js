@@ -8,7 +8,7 @@ const containerborder = document.querySelector(".container");
 outputText.style.borderColor = "transparent";
 containerborder.style.borderColor = "#fdffb6"
 
-function calcProfitAndLoss(initial, quantity, current) {
+const calcProfitAndLoss = (initial, quantity, current) => {
     if (initial > current) {
         let loss = ((initial - current) * quantity).toFixed(2);
         let lossPercentage = ((loss / initial) * 100).toFixed(2);
@@ -29,7 +29,7 @@ function calcProfitAndLoss(initial, quantity, current) {
     }
 }
 
-function submitHandler() {
+const submitHandler = () => {
     let init = Number(initalPrice.value);
     let qty = Number(stocksQuantity.value);
     let curr = Number(currentPrice.value);
@@ -49,6 +49,4 @@ function submitHandler() {
 
 submitBtn.addEventListener("click", submitHandler);
 
-function showResult(message) {
-    outputText.innerText = message;
-}
+const showResult = (message) => outputText.innerText = message
